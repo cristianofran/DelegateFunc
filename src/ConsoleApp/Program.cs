@@ -6,8 +6,28 @@
         {
             DelegateUsandoParametro();
             DelegateUsandoDoisParametros();
+            DelegateUsandoMetodoAnonimo();
+
             Console.ReadKey();
         }
+
+        #region DelegateUsandoMetodoAnonimo
+
+        private static void DelegateUsandoMetodoAnonimo()
+        {
+            Func<int, bool> VerificarPositivo = delegate (int numero)
+            {
+                return numero > 0;
+            };
+
+            Console.Write("Digite um número inteiro: ");
+            var numero = Convert.ToInt32(Console.ReadLine());
+            var resultado = VerificarPositivo(numero);
+
+            Console.WriteLine("O número \"{0}\" é positivo?: {1}", numero, resultado ? "Sim" : "Não");
+        }
+
+        #endregion
 
         #region [DelegateUsandoDoisParametros]
 
