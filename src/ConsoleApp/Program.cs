@@ -9,10 +9,14 @@
             Console.ReadKey();
         }
 
+        #region [DelegateUsandoDoisParametros]
+
         private static void DelegateUsandoDoisParametros()
         {
-            var parcela1 = 9.7;
-            var parcela2 = 0.3;
+            Console.Write("Digite a primeira parcela: ");
+            var parcela1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite a segunda parcela: ");
+            var parcela2 = Convert.ToDouble(Console.ReadLine());
 
             Func<double, double, double> Calculadora = Somar;
             var soma = Calculadora(parcela1, parcela2);
@@ -22,6 +26,10 @@
 
         private static double Somar(double parcela1, double parcela2)
             => parcela1 + parcela2;
+
+        #endregion
+
+        #region [DelegateUsandoParametro]
 
         private static void DelegateUsandoParametro()
         {
@@ -36,5 +44,7 @@
 
         private static string BomDia(string nome) 
             => $"Bom dia, {nome}";
+
+        #endregion
     }
 }
