@@ -3,15 +3,31 @@
     internal class Program
     {
         static void Main()
-        {
+        {            
             DelegateUsandoParametro();
             DelegateUsandoDoisParametros();
-            DelegateUsandoMetodoAnonimo();
+            DelegateUsandoMetodoAnonimo();            
+            DelegateUsandoLambda();
 
             Console.ReadKey();
         }
 
-        #region DelegateUsandoMetodoAnonimo
+        #region [DelegateUsandoLambda]
+
+        private static void DelegateUsandoLambda()
+        {
+            Func<int, bool> VerificarPar = numero => (numero % 2) == 0;
+            Console.Write("Digite um número inteiro: ");
+            var numero = Convert.ToInt32(Console.ReadLine());
+
+            var resultado = VerificarPar(numero);
+
+            Console.WriteLine("O número \"{0}\" é par?: {1}", numero, resultado ? "Sim" : "Não");
+        }
+
+        #endregion
+
+        #region [DelegateUsandoMetodoAnonimo]
 
         private static void DelegateUsandoMetodoAnonimo()
         {
